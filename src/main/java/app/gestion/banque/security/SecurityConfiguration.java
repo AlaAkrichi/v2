@@ -38,11 +38,13 @@ public class SecurityConfiguration {
                         .authorizeHttpRequests(
                                 authorize ->
                                         authorize
-                                                .requestMatchers(POST,"/inscription").permitAll()
-                                                .requestMatchers(POST,"/activation").permitAll()
-                                                .requestMatchers(POST,"/connexion").permitAll()
-                                                .requestMatchers(GET,"/users").hasRole("UTILSATEUR")
-                                                .requestMatchers(GET,"/role/list").hasRole("ADMINISTRATEUR")
+                                                .requestMatchers(POST,"/activation","/inscription","/connexion").permitAll()
+                                                .requestMatchers(GET,"/users","role/list").hasRole("ADMINISTRATEUR")
+                                                .requestMatchers(POST,"role/add").hasRole("ADMINISTRATEUR")
+                                                .requestMatchers(GET,"/users").hasAnyRole("ADMINISTRATEUR","MANAGER")
+                                                .requestMatchers(GET,"/comptes/**").hasRole("UTILISATEUR")
+                                                .requestMatchers(GET,"/fournisseurs").hasRole("MANAGER")
+                                                .requestMatchers(POST,"/fournisseurs").hasRole("MANAGER")
                                                 .anyRequest().authenticated()
                         )
                         .sessionManagement(httpSecuritySessionManagementConfigurer ->
