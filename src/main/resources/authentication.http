@@ -1,0 +1,59 @@
+###
+POST http://localhost:9090/inscription
+Content-Type: application/json
+
+{
+  "email": "mar@info.tn",
+  "password": "api123456",
+  "name": "marm",
+  "lastName": "aziza"
+}
+
+###
+POST http://localhost:9090/connexion
+Content-Type: application/json
+
+{
+  "email": "mar@info.tn",
+  "password":"api123456"
+}
+
+###
+POST http://localhost:9090/inscription
+Content-Type: application/json
+
+{
+  "email": "doudi@gmail.com",
+  "password":"789",
+  "name":"doudi"
+}
+###
+POST http://localhost:9090/connexion
+Content-Type: application/json
+{
+  "email": "mar@info.tn",
+  "password":"api123456"
+}
+###
+POST http://localhost:9090/connexion
+Content-Type: application/json
+
+{
+  "username": "efg@gmail.com",
+  "password":"efg123"
+
+
+}
+
+###
+POST http://localhost:9090/inscription
+Content-Type: application/json
+
+{
+  "username": "ekrichi@info.tn",
+  "password": "api123456",
+  "name": "ala",
+  "lastName": "akrichi"
+}
+
+###
